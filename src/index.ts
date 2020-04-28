@@ -11,11 +11,10 @@ app.get("/", (req, res) => {
 })
 
 app.get("/transactions", (req, res) => {
-    const success = true //Math.random() < 0.5
-    return res.status(success ? 200 : 500).send({
-        status: success ? 200 : 500,
-        ...(success && { data: transactions }),
-        message: success ? "Success" : "Bad request!"
+    return res.status(200).send({
+        status: 200,
+        data: transactions,
+        message: "Success"
     })
 })
 
